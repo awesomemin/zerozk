@@ -42,6 +42,7 @@ export class StreamingService {
     const data = await response.json();
     if (!response.ok && data.message === '잘못된 next 값입니다.') {
       this.streamingsWithZeroUser = this.tempStreamingsWithZeroUser;
+      this.tempStreamingsWithZeroUser = [];
       this.next = null;
       console.log(this.streamingsWithZeroUser);
     } else if (!response.ok) {
